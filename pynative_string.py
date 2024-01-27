@@ -1,25 +1,27 @@
-# check if n is less than the length of the string
 # remove the first n characters from the string
 
+def remove_chars (name, n, from_end=False):
+    print ("First name:", name)
 
-
-def remove_chars(word, n, from_end=False):
-    print('Original string:', word)
-
-
+# remove the characters from the end or beginning of string
     if from_end:
-        x = word[:-n]
+        x = name[:-n]
     else:
-        x = word[n:]
-    return x
+        x = name[n:]
+# return
+        return
 
-print("Removing characters from a string")
+# ask user to input string and the number of characters to remove
+user_input = input("Enter your name: ")
+n = int(input("Enter how many letters you want to remove from your name: "))
 
-
-user_input = input("Enter a string: ")
-n = int(input("Enter the number of characters to remove: "))
-from_end_input = input("Remove from the end? (y/n): ").lower()
+# ask user whether to remove charcaters from the end or beginning
+from_end_input = input("Do you want it to remove from end or beginning? (y/n:) ").lower()
 from_end = from_end_input == 'y'
-result = remove_chars(user_input, n, from_end)
 
-print("Result after removing characters:", result)
+# call the function with the user input
+result = remove_chars (user_input, n, from_end)
+
+# display the result
+print ("This will be your nickname: ", result)
+
